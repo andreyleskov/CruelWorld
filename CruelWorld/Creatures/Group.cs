@@ -24,7 +24,7 @@ namespace CruelWorld.Creatures
 
         public IEnumerator<ICreature> GetEnumerator()
         {
-            return (IEnumerator<ICreature>)this._creatures.GetEnumerator();
+            return ((IEnumerable<ICreature>)_creatures).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
