@@ -42,8 +42,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CruelWorld.cs" />
+    <Compile Include="Abilities\PredatorAbility.cs" />
+    <Compile Include="Abilities\WeaponUsingAbility.cs" />
+    <Compile Include="Creatures\IPredator.cs" />
+    <Compile Include="Weapons\NatureWeapon.cs" />
+    <Compile Include="Weapons\Club.cs" />
+    <Compile Include="Weapons\IWeapon.cs" />
+    <Compile Include="Weapons\IWeaponUser.cs" />
+    <Compile Include="Creatures\Sheep.cs" />
+    <Compile Include="Interactions\Feast.cs" />
+    <Compile Include="Interactions\Fight.cs" />
+    <Compile Include="Creatures\Goblin.cs" />
+    <Compile Include="Creatures\MortalCreature.cs" />
+    <Compile Include="Creatures\ICreature.cs" />
+    <Compile Include="Creatures\Ogre.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Weapons\MagicSword.cs" />
+    <Compile Include="Weapons\RustySword.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
