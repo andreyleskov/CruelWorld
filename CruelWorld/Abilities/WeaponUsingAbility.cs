@@ -19,7 +19,7 @@ namespace CruelWorld.Abilities
 
         public int Fight()
         {
-            return _creature.Fight() + _weapon.FightBonus;
+            return _creature.FightPower() + _weapon.FightBonus;
         }
     }
 }
