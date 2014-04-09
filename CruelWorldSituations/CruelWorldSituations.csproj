@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlliesAgainsOgres.cs" />
     <Compile Include="OgreBandEatsGoblinBand.cs" />
     <Compile Include="GoblinEatsSheep.cs" />
     <Compile Include="OgreAndGoblinsBand.cs" />
