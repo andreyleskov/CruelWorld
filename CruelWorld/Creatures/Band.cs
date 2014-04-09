@@ -1,57 +1,45 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CruelWorld.Creatures
 {
-    using System.Collections;
-
     using CruelWorld.Abilities;
+
+    using NUnit.Framework.Constraints;
 
     public class Band : Group, IPredator
     {
-        public Band(params Goblin[] creatures)
+        public Band(params ICreature[] creatures):base(creatures)
         {
-            
+            ICreature[] predatorCreatures = creatures.Where(c =>c is IPredator).ToArray();
+
+            _predatorAbility = new PredatorAbility(predatorCreatures, 
+                                                   predatorCreatures.Cast<IPredator>()
+                                                        .SelectMany(p =>p.Victims)
+                                                        .Distinct()
+                                                        .ToArray());
         }
+
+        private readonly PredatorAbility _predatorAbility;
 
         public bool CanEat(ICreature creature)
         {
-            throw new NotImplementedException();
+            return _predatorAbility.CanEat(creature);
+        }
+
+        public Type[] Victims 
+        { 
+            get
+            {
+                return _predatorAbility.Victims;
+            } 
         }
 
         public bool TryEat(params ICreature[] victims)
         {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class Group : IFigher, IEnumerable<ICreature>
-    {
-        private readonly ICreature[] _creatures;
-
-        private readonly FightAbility _fightAbility;
-        public Group(params ICreature[] creatures)
-        {
-            this._creatures = creatures;
-            _fightAbility = new FightAbility(this.ToArray());
-        }
-
-        public bool TryFight(params ICreature[] opponents)
-        {
-           return _fightAbility.TryFight(opponents);
-        }
-
-        public IEnumerator<ICreature> GetEnumerator()
-        {
-            return (IEnumerator<ICreature>)_creatures.GetEnumerator();
-        }
-
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            return _creatures.GetEnumerator();
+            return _predatorAbility.TryEat(victims);
         }
     }
 }

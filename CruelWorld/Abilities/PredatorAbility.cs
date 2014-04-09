@@ -11,16 +11,26 @@ namespace CruelWorld.Abilities
         private readonly IEnumerable<ICreature> _owner;
 
         private readonly HashSet<Type> _victims;
+        private readonly Type[] _victimsArray;
 
         public PredatorAbility(IEnumerable<ICreature> owner, params Type[] victims)
         {
             this._owner = owner;
+            _victimsArray = victims;
             _victims = new HashSet<Type>(victims);
         }
 
         public bool CanEat(ICreature creature)
         {
             return _victims.Contains(creature.GetType());
+        }
+
+        public Type[] Victims
+        {
+            get
+            {
+                return _victimsArray;
+            }
         }
 
         public bool TryEat(params ICreature[] victims)

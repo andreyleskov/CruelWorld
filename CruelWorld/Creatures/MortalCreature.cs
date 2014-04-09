@@ -13,9 +13,10 @@ namespace CruelWorld
         public int HitPoints { get; protected set; }
         public abstract int FightPower();
 
-        protected MortalCreature()
+        protected MortalCreature(int totalHp)
         {
             IsDead = false;
+            HitPoints = totalHp;
         }
 
         public int Suffer(int amount)

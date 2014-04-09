@@ -45,6 +45,9 @@
     <Compile Include="Abilities\FightAbility.cs" />
     <Compile Include="Abilities\PredatorAbility.cs" />
     <Compile Include="Abilities\WeaponUsingAbility.cs" />
+    <Compile Include="Creatures\Band.cs" />
+    <Compile Include="Creatures\Group.cs" />
+    <Compile Include="Creatures\Humanoid.cs" />
     <Compile Include="Creatures\IFigher.cs" />
     <Compile Include="Creatures\IPredator.cs" />
     <Compile Include="Weapons\NatureWeapon.cs" />

@@ -1,14 +1,19 @@
 namespace CruelWorld
 {
-    //class Ogre : MortalCreature
-    //{
-    //    //public Ogre(float weaponCoeffictient) : base(weaponCoeffictient)
-    //    //{
-    //    //}
+    using System;
 
-    //    //public override int FightPower()
-    //    //{
-    //    //    return  (int)(10*this.WeaponCoefficient);
-    //    //}
-    //}
+    public class Ogre : Humanoid
+    {
+        public Ogre(): base(10, typeof(Goblin),typeof(Sheep))
+        {
+        }
+
+        protected override int BaseFightPower
+        {
+            get
+            {
+                return 5;
+            }
+        }
+    }
 }
