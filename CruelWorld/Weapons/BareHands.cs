@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CruelWorld.Weapons
 {
-    class NatureWeapon : IWeapon
+    class BareHands : IWeapon
     {
         public int FightBonus
         {

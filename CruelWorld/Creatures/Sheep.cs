@@ -1,7 +1,4 @@
-﻿using System.Text;
-using System.Threading.Tasks;
-
-namespace CruelWorld
+﻿namespace CruelWorld.Creatures
 {
     public class Sheep: MortalCreature
     {
@@ -9,7 +6,7 @@ namespace CruelWorld
         {
         }
 
-        public override int FightPower()
+        public override int Fight()
         {
             return 1;
         }

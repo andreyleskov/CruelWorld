@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 namespace CruelWorldSituations
 {
     using CruelWorld;
+    using CruelWorld.Creatures;
+    using CruelWorld.Weapons;
 
     using NUnit.Framework;
 

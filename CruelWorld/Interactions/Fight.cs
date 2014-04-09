@@ -1,8 +1,9 @@
-namespace CruelWorld
+namespace CruelWorld.Interactions
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
+
+    using CruelWorld.Creatures;
 
     class Fight
     {
@@ -24,7 +25,7 @@ namespace CruelWorld
 
         private void Resolve(IEnumerable<ICreature> damageDealers, ICreature[] damageTakers)
         {
-            var attackersPower = damageDealers.Sum(a => a.FightPower());
+            var attackersPower = damageDealers.Sum(a => a.Fight());
 
             while (attackersPower > 0 && damageTakers.Any(d => !d.IsDead))
             {

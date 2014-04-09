@@ -1,14 +1,12 @@
-namespace CruelWorld
+namespace CruelWorld.Creatures
 {
-    using System;
-
     public interface ICreature
     {
         bool IsDead { get; }
         bool IsAlive { get; }
         int HitPoints { get; }
         //produce some damage
-        int FightPower();
+        int Fight();
         /// <summary>
         /// Take some damage
         /// </summary>

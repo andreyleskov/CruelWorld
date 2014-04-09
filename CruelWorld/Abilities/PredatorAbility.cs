@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CruelWorld.Abilities
 {
+    using CruelWorld.Creatures;
+    using CruelWorld.Interactions;
+
     class PredatorAbility : IPredator
     {
         private readonly IEnumerable<ICreature> _owner;

@@ -1,4 +1,4 @@
-namespace CruelWorld
+namespace CruelWorld.Creatures
 {
     public class Goblin : Humanoid
     {

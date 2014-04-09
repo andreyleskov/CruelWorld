@@ -1,4 +1,4 @@
-namespace CruelWorld
+namespace CruelWorld.Creatures
 {
     using System;
 
@@ -7,7 +7,7 @@ namespace CruelWorld
 
     public abstract class Humanoid : MortalCreature, IPredator, IWeaponUser, IFigher
     {
-        private IWeapon _weapon = new NatureWeapon();
+        private IWeapon _weapon = new BareHands();
         private readonly PredatorAbility _predatorAbility;
         private readonly FightAbility _fightAbility;
 
@@ -18,7 +18,7 @@ namespace CruelWorld
         }
 
         protected abstract int BaseFightPower { get; }
-        public override int FightPower()
+        public override int Fight()
         {
             return this.BaseFightPower + this._weapon.FightBonus;
         }

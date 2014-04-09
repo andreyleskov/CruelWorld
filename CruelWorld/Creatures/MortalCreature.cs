@@ -1,4 +1,4 @@
-namespace CruelWorld
+namespace CruelWorld.Creatures
 {
     using System;
 
@@ -7,25 +7,25 @@ namespace CruelWorld
         public bool IsDead { get; private set; }
         public bool IsAlive{ get
         {
-            return !IsDead;
+            return !this.IsDead;
         }}
 
         public int HitPoints { get; protected set; }
-        public abstract int FightPower();
+        public abstract int Fight();
 
         protected MortalCreature(int totalHp)
         {
-            IsDead = false;
-            HitPoints = totalHp;
+            this.IsDead = false;
+            this.HitPoints = totalHp;
         }
 
         public int Suffer(int amount)
         {
-            int resultHp = Math.Max(0, HitPoints - amount);
-            int sufferAmount = HitPoints - resultHp;
-            HitPoints = resultHp;
+            int resultHp = Math.Max(0, this.HitPoints - amount);
+            int sufferAmount = this.HitPoints - resultHp;
+            this.HitPoints = resultHp;
 
-            IsDead = HitPoints <= 0;
+            this.IsDead = this.HitPoints <= 0;
 
             return sufferAmount;
         }

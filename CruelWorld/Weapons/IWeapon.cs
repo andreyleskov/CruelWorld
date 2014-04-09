@@ -1,4 +1,4 @@
-namespace CruelWorld
+namespace CruelWorld.Weapons
 {
     public interface IWeapon
     {

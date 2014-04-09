@@ -1,7 +1,9 @@
-namespace CruelWorld
+namespace CruelWorld.Interactions
 {
     using System.Collections.Generic;
     using System.Linq;
+
+    using CruelWorld.Creatures;
 
     class Feast
     {

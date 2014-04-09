@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace CruelWorld.Abilities
 {
+    using CruelWorld.Creatures;
+    using CruelWorld.Interactions;
+
     class FightAbility : IFigher
     {
         private readonly ICreature[] _owner;

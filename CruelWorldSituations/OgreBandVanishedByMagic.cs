@@ -8,6 +8,7 @@ namespace CruelWorldSituations
 {
     using CruelWorld;
     using CruelWorld.Creatures;
+    using CruelWorld.Weapons;
 
     using NUnit.Framework;
     /// <summary>

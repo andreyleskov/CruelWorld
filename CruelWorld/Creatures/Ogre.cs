@@ -1,7 +1,5 @@
-namespace CruelWorld
+namespace CruelWorld.Creatures
 {
-    using System;
-
     public class Ogre : Humanoid
     {
         public Ogre(): base(10, typeof(Goblin),typeof(Sheep))
