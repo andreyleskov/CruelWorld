@@ -16,11 +16,38 @@ namespace CruelWorldSituations
     [TestFixture]
     public class OgreBandVanishedByMagic
     {
+        private bool _eaten;
+
+        private Goblin _goblin;
+
+        private Band _ogreBand;
+
         [SetUp]
         public void Given_ogreBand_and_pumpedUpGoblin_when_eat()
         {
-            var ogreBand = new Band(new Ogre(), new Ogre());
-            var goblin = new Goblin();
+            this._ogreBand = new Band(new Ogre(), new Ogre());
+            this._goblin = new Goblin();
+            this._goblin.SetWeapon(new MagicSword());
+
+            this._eaten = this._ogreBand.TryEat(this._goblin);
+        }
+
+        [Test]
+        public void Goblin_is_heroic_dead()
+        {
+            Assert.True(_goblin.IsDead);
+        }
+
+        [Test]
+        public void Goblin_is_not_eaten()
+        {
+            Assert.False(_eaten);
+        }
+
+        [Test]
+        public void Ogres_are_dead()
+        {
+            Assert.True(_ogreBand.All(o => o.IsDead));
         }
     }
 }
