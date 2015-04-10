@@ -25,7 +25,7 @@ namespace CruelWorld.Interactions
 
         private void Resolve(IEnumerable<ICreature> damageDealers, ICreature[] damageTakers)
         {
-            var attackersPower = damageDealers.Sum(a => a.Fight());
+            var attackersPower = damageDealers.Sum(a => a.Strength);
 
             while (attackersPower > 0 && damageTakers.Any(d => !d.IsDead))
             {

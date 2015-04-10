@@ -6,9 +6,9 @@
         {
         }
 
-        public override int Fight()
+        public override int Strength
         {
-            return 1;
+            get { return 1; }
         }
     }
 }

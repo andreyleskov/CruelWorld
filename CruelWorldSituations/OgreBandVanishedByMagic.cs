@@ -17,7 +17,7 @@ namespace CruelWorldSituations
     [TestFixture]
     public class OgreBandVanishedByMagic
     {
-        private bool _eaten;
+        private bool _goblinsAreEaten;
 
         private Goblin _goblin;
 
@@ -28,9 +28,9 @@ namespace CruelWorldSituations
         {
             this._ogreBand = new Band(new Ogre(), new Ogre());
             this._goblin = new Goblin();
-            this._goblin.SetWeapon(new MagicSword());
+            this._goblin.TakeWeapon(new MagicSword());
 
-            this._eaten = this._ogreBand.TryEat(this._goblin);
+            this._goblinsAreEaten = this._ogreBand.TryEat(this._goblin);
         }
 
         [Test]
@@ -42,7 +42,7 @@ namespace CruelWorldSituations
         [Test]
         public void Goblin_is_not_eaten()
         {
-            Assert.False(_eaten);
+            Assert.False(_goblinsAreEaten);
         }
 
         [Test]

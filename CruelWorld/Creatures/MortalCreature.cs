@@ -11,7 +11,7 @@ namespace CruelWorld.Creatures
         }}
 
         public int HitPoints { get; protected set; }
-        public abstract int Fight();
+        public abstract int Strength { get; }
 
         protected MortalCreature(int totalHp)
         {

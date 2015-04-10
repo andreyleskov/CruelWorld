@@ -19,7 +19,7 @@ namespace CruelWorldSituations
     {
         private Goblin _winner;
 
-        private bool _eatResult;
+        private bool _sheepBeenEaten;
 
         private Sheep _sheep;
 
@@ -31,7 +31,7 @@ namespace CruelWorldSituations
         public void Given_two_goblin_and_a_sheep_when_goblin_fight_and_winner_eats_sheep()
         {
             this._goblinA = new Goblin();
-            this._goblinA.SetWeapon(new RustySword());
+            this._goblinA.TakeWeapon(new RustySword());
 
             this._goblinB = new Goblin();
             this._sheep = new Sheep();
@@ -40,7 +40,7 @@ namespace CruelWorldSituations
 
             this._winner = this._goblinA.IsAlive ? this._goblinA : this._goblinB;
 
-            this._eatResult = this._winner.TryEat(this._sheep);
+            this._sheepBeenEaten = this._winner.TryEat(this._sheep);
         }
 
         [Test]
@@ -58,7 +58,7 @@ namespace CruelWorldSituations
         [Test]
         public void Sheep_eaten()
         {
-            Assert.True(_eatResult);
+            Assert.True(_sheepBeenEaten);
         }
         [Test]
         public void Sheep_is_dead()

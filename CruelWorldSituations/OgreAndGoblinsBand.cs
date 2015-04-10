@@ -14,7 +14,7 @@ namespace CruelWorldSituations
     [TestFixture]
     public class OgreAndGoblinsBand
     {
-        private bool _eatResult;
+        private bool _goblinsEaten;
 
         private Ogre _ogre;
 
@@ -26,7 +26,7 @@ namespace CruelWorldSituations
             _ogre = new Ogre();
             this._goblinBand = new ICreature[] { new Goblin(), new Goblin(), new Goblin() };
 
-            this._eatResult = _ogre.TryEat(_goblinBand);
+            this._goblinsEaten = _ogre.TryEat(_goblinBand);
         }
 
         [Test]
@@ -38,7 +38,7 @@ namespace CruelWorldSituations
         [Test]
         public void Goblins_not_been_eaten()
         {
-            Assert.False(_eatResult);
+            Assert.False(_goblinsEaten);
         }
 
         [Test]

@@ -18,9 +18,10 @@ namespace CruelWorld.Creatures
         }
 
         protected abstract int BaseFightPower { get; }
-        public override int Fight()
+
+        public override int Strength
         {
-            return this.BaseFightPower + this._weapon.FightBonus;
+            get { return this.BaseFightPower + this._weapon.FightBonus; }
         }
 
         public bool CanEat(ICreature creature)
@@ -41,7 +42,7 @@ namespace CruelWorld.Creatures
             return this._predatorAbility.TryEat(victims);
         }
 
-        public void SetWeapon(IWeapon weapon)
+        public void TakeWeapon(IWeapon weapon)
         {
             this._weapon = weapon;
         }

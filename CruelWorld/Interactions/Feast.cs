@@ -5,7 +5,7 @@ namespace CruelWorld.Interactions
 
     using CruelWorld.Creatures;
 
-    class Feast
+    class Feast<TFigher>
     {
         private readonly IEnumerable<ICreature> _predators;
 

@@ -26,7 +26,7 @@ namespace CruelWorldSituations
         public void GivenGoblinAndASheep()
         {
             this.goblin = new Goblin();
-            goblin.SetWeapon(new Club());
+            goblin.TakeWeapon(new Club());
             this.sheep = new Sheep();
             this.sheepEaten = goblin.TryEat(sheep);
         }

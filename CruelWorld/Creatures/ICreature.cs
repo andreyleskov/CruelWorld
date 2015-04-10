@@ -5,8 +5,7 @@ namespace CruelWorld.Creatures
         bool IsDead { get; }
         bool IsAlive { get; }
         int HitPoints { get; }
-        //produce some damage
-        int Fight();
+        int Strength { get; }        
         /// <summary>
         /// Take some damage
         /// </summary>
